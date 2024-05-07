@@ -1,3 +1,34 @@
 <ion-content [fullscreen]="true">
-
+  <form (ngSubmit)="submitForm()" [formGroup]="form">
+    <span>Seu email:*</span>
+    <ion-item>
+      <ion-input formControlName="email" type="text"></ion-input>
+    </ion-item>
+    <span *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">E-mail é obrigatório</span>
+    <span *ngIf="form.get('email')?.dirty && form.get('email')?.errors?.['email']">Formato do e-mail inválido</span>
+    <span>Esse site foi útil para você de alguma forma? (Explique)*</span>
+    <ion-item>
+      <ion-input formControlName="wasItUsefull" type="text"></ion-input>
+    </ion-item>
+    <span *ngIf="form.get('wasItUsefull')?.touched && form.get('wasItUsefull')?.errors?.['required']">Este campo é obrigatório</span>
+    <span *ngIf="form.get('wasItUsefull')?.dirty && form.get('wasItUsefull')?.errors?.['minlength']">Este campo deve ter no mínimo 10 caracteres</span>
+    <span>Se pudéssemos melhorar algo nele, oque seria?</span>
+    <ion-item>
+      <ion-input formControlName="canWeImprove" type="text"></ion-input>
+    </ion-item>
+    <span *ngIf="form.get('canWeImprove')?.dirty && form.get('canWeImprove')?.errors?.['minlength']">Este campo deve ter no mínimo 10 caracteres</span>
+    <span>Ele levou você a questionar sua saúde mental?*</span>
+    <ion-item>
+      <ion-input formControlName="madeYouQuestion" type="text"></ion-input>
+    </ion-item>
+    <span *ngIf="form.get('madeYouQuestion')?.touched && form.get('madeYouQuestion')?.errors?.['required']">Este campo é obrigatório</span>
+    <span *ngIf="form.get('madeYouQuestion')?.dirty && form.get('madeYouQuestion')?.errors?.['minlength']">Este campo deve ter no mínimo 3 caracteres</span>
+    <span>Você vai cuidar melhor da sua saúde mental e procurar ajuda?*</span>
+    <ion-item>
+      <ion-input formControlName="isGoingToCare" type="text"></ion-input>
+    </ion-item>
+    <span *ngIf="form.get('isGoingToCare')?.touched && form.get('isGoingToCare')?.errors?.['required']">Este campo é obrigatório</span>
+    <span *ngIf="form.get('isGoingToCare')?.dirty && form.get('isGoingToCare')?.errors?.['minlength']">Este campo deve ter no mínimo 3 caracteres</span>
+    <ion-button type="submit">Enviar</ion-button>
+  </form>
 </ion-content>
