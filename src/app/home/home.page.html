@@ -8,6 +8,34 @@
   <form (ngSubmit)="submitForm()" [formGroup]="form">
 
     <div>
+      <ion-card>
+        <p>
+          Você já se pegou levando um prato para a cozinha e, sem perceber, acabou no banheiro sem saber o que estava
+          fazendo? Pode ser um indício de TDAH. Já teve o pensamento de se jogar na frente de um carro que passava na
+          rua? Isso pode indicar depressão. Ou talvez já tenha sentido uma agonia no peito, como se algo o estivesse
+          apertando? Esses podem ser sintomas de ansiedade. Muitas pessoas vivenciam situações assim sem perceberem ou
+          sem entenderem a gravidade do que sentem. Ansiedade, depressão e TDAH são temas que, infelizmente, estão se
+          tornando comuns nos dias atuais, mas não devem ser tratados com desdém. Essas condições podem afetar
+          drasticamente sua vida, causando falta de foco, motivação e até agressividade desnecessária, sem que você
+          perceba a origem. É importante estar atento a esses sinais e, se necessário, procurar um profissional
+          qualificado para avaliar e tratar qualquer problema que possa estar enfrentando. No entanto, é crucial
+          ressaltar que as informações aqui apresentadas são apenas para conscientização, e não substituem o diagnóstico
+          e tratamento adequados por profissionais de saúde mental.
+        </p>
+
+      </ion-card>
+    </div>
+
+    <div class="container-buttons">
+      <ion-title>
+        Veja mais sobre:
+      </ion-title>
+      <ion-button expand="block" routerLink="/feeling-2">TDAH</ion-button>
+      <ion-button expand="block" routerLink="/feeling-1">Depressão</ion-button>
+      <ion-button expand="block" routerLink="/feeling-3">Ansiedade</ion-button>
+    </div>
+
+    <div>
       <ion-item>
         <h5>Seu e-mail:*</h5>
         <ion-icon name="mail" slot="end" color=""></ion-icon>
@@ -82,7 +110,7 @@
         ter no mínimo 3 caracteres</span>
     </div>
     <div class="container">
-      <ion-button type="submit" expand="block" size="round">Enviar</ion-button>
+      <ion-button type="submit" expand="block" size="round" class="send-button">Enviar</ion-button>
     </div>
   </form>
 </ion-content>
