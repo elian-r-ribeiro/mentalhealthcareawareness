@@ -1,34 +1,88 @@
-<ion-content [fullscreen]="true">
+<ion-header>
+  <ion-toolbar color="primary">
+    <h1>Mental Health</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="animate__animated animate__bounceInUp">
   <form (ngSubmit)="submitForm()" [formGroup]="form">
-    <span>Seu email:*</span>
-    <ion-item>
-      <ion-input formControlName="email" type="text"></ion-input>
-    </ion-item>
-    <span *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">E-mail é obrigatório</span>
-    <span *ngIf="form.get('email')?.dirty && form.get('email')?.errors?.['email']">Formato do e-mail inválido</span>
-    <span>Esse site foi útil para você de alguma forma? (Explique)*</span>
-    <ion-item>
-      <ion-input formControlName="wasItUsefull" type="text"></ion-input>
-    </ion-item>
-    <span *ngIf="form.get('wasItUsefull')?.touched && form.get('wasItUsefull')?.errors?.['required']">Este campo é obrigatório</span>
-    <span *ngIf="form.get('wasItUsefull')?.dirty && form.get('wasItUsefull')?.errors?.['minlength']">Este campo deve ter no mínimo 10 caracteres</span>
-    <span>Se pudéssemos melhorar algo nele, oque seria?</span>
-    <ion-item>
-      <ion-input formControlName="canWeImprove" type="text"></ion-input>
-    </ion-item>
-    <span *ngIf="form.get('canWeImprove')?.dirty && form.get('canWeImprove')?.errors?.['minlength']">Este campo deve ter no mínimo 10 caracteres</span>
-    <span>Ele levou você a questionar sua saúde mental?*</span>
-    <ion-item>
-      <ion-input formControlName="madeYouQuestion" type="text"></ion-input>
-    </ion-item>
-    <span *ngIf="form.get('madeYouQuestion')?.touched && form.get('madeYouQuestion')?.errors?.['required']">Este campo é obrigatório</span>
-    <span *ngIf="form.get('madeYouQuestion')?.dirty && form.get('madeYouQuestion')?.errors?.['minlength']">Este campo deve ter no mínimo 3 caracteres</span>
-    <span>Você vai cuidar melhor da sua saúde mental e procurar ajuda?*</span>
-    <ion-item>
-      <ion-input formControlName="isGoingToCare" type="text"></ion-input>
-    </ion-item>
-    <span *ngIf="form.get('isGoingToCare')?.touched && form.get('isGoingToCare')?.errors?.['required']">Este campo é obrigatório</span>
-    <span *ngIf="form.get('isGoingToCare')?.dirty && form.get('isGoingToCare')?.errors?.['minlength']">Este campo deve ter no mínimo 3 caracteres</span>
-    <ion-button type="submit">Enviar</ion-button>
+
+    <div>
+      <ion-item>
+        <h5>Seu e-mail:*</h5>
+        <ion-icon name="mail" slot="end" color=""></ion-icon>
+      </ion-item>
+      <ion-item class="typing-fields">
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
+      <span *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']" class="required-text">E-mail é
+        obrigatório</span>
+      <span *ngIf="form.get('email')?.dirty && form.get('email')?.errors?.['email']" class="required-text">Formato do
+        e-mail inválido</span>
+    </div>
+
+    <div>
+      <ion-item>
+        <h5>Esse site foi útil para você de alguma forma? (Explique)*</h5>
+        <ion-icon name="star" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item class="typing-fields">
+        <ion-input formControlName="wasItUsefull" type="text"></ion-input>
+      </ion-item>
+      <span *ngIf="form.get('wasItUsefull')?.touched && form.get('wasItUsefull')?.errors?.['required']"
+        class="required-text">Este campo é
+        obrigatório</span>
+      <span *ngIf="form.get('wasItUsefull')?.dirty && form.get('wasItUsefull')?.errors?.['minlength']"
+        class="required-text">Este campo deve
+        ter no mínimo 10 caracteres</span>
+    </div>
+
+    <div>
+      <ion-item>
+        <h5>Se pudéssemos melhorar algo nele, o que seria?</h5>
+        <ion-icon name="hammer" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item class="typing-fields">
+        <ion-input formControlName="canWeImprove" type="text"></ion-input>
+      </ion-item>
+      <span *ngIf="form.get('canWeImprove')?.dirty && form.get('canWeImprove')?.errors?.['minlength']"
+        class="required-text">Este campo deve
+        ter no mínimo 10 caracteres</span>
+    </div>
+
+    <div>
+      <ion-item>
+        <h5>Ele levou você a questionar sua saúde mental?*</h5>
+        <ion-icon name="heart" slot="end" class=""></ion-icon>
+      </ion-item>
+      <ion-item class="typing-fields">
+        <ion-input formControlName="madeYouQuestion" type="text"></ion-input>
+      </ion-item>
+      <span *ngIf="form.get('madeYouQuestion')?.touched && form.get('madeYouQuestion')?.errors?.['required']"
+        class="required-text">Este campo
+        é obrigatório</span>
+      <span *ngIf="form.get('madeYouQuestion')?.dirty && form.get('madeYouQuestion')?.errors?.['minlength']"
+        class="required-text">Este campo
+        deve ter no mínimo 3 caracteres</span>
+    </div>
+
+    <div>
+      <ion-item>
+        <h5>Você vai cuidar melhor da sua saúde mental e procurar ajuda?*</h5>
+        <ion-icon name="heart" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item class="typing-fields">
+        <ion-input formControlName="isGoingToCare" type="text"></ion-input>
+      </ion-item>
+      <span *ngIf="form.get('isGoingToCare')?.touched && form.get('isGoingToCare')?.errors?.['required']"
+        class="required-text">Este campo é
+        obrigatório</span>
+      <span *ngIf="form.get('isGoingToCare')?.dirty && form.get('isGoingToCare')?.errors?.['minlength']"
+        class="required-text">Este campo deve
+        ter no mínimo 3 caracteres</span>
+    </div>
+    <div class="container">
+      <ion-button type="submit" expand="block" size="round">Enviar</ion-button>
+    </div>
   </form>
 </ion-content>

@@ -12,13 +12,13 @@ export class HomePage implements OnInit {
 
   form!: FormGroup;
 
-  constructor(private builder: FormBuilder, private alertService: AlertService, private firebaseService: FirebaseService) {}
+  constructor(private builder: FormBuilder, private alertService: AlertService, private firebaseService: FirebaseService) { }
 
   ngOnInit() {
-      this.startForm();
+    this.startForm();
   }
 
-  startForm(){
+  startForm() {
     this.form = this.builder.group({
       email: ['', [Validators.required, Validators.email]],
       wasItUsefull: ['', [Validators.required, Validators.minLength(10)]],
@@ -28,15 +28,15 @@ export class HomePage implements OnInit {
     });
   }
 
-  async submitForm(){
-    if(this.form.valid){
+  async submitForm() {
+    if (this.form.valid) {
       await this.firebaseService.uploadFormToFirebase(this.form.value['email'], this.form.value['wasItUsefull'],
         this.form.value['canWeImprove'], this.form.value['madeYouQuestion'], this.form.value['isGoingToCare']
       );
-      this.alertService.presentAlert("Sucesso", "Obrigado por responder a nossa pesquisa");
+      this.alertService.presentAlert("Sucesso", "Obrigado por responder a nossa pesquisa!");
       this.startForm();
-    }else{
-      this.alertService.presentAlert("Erro ao enviar", "Cheque os campos e tente novamente");
+    } else {
+      this.alertService.presentAlert("Erro ao enviar", "Cheque os campos e tente novamente!");
     }
   }
 }
