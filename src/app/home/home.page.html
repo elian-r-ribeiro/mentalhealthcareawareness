@@ -13,7 +13,7 @@
         <ion-icon name="mail" slot="end" color=""></ion-icon>
       </ion-item>
       <ion-item class="typing-fields">
-        <ion-input formControlName="email" type="text"></ion-input>
+        <ion-input placeholder="Digite aqui..." formControlName="email" type="text"></ion-input>
       </ion-item>
       <span *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']" class="required-text">E-mail é
         obrigatório</span>
@@ -27,7 +27,7 @@
         <ion-icon name="star" slot="end"></ion-icon>
       </ion-item>
       <ion-item class="typing-fields">
-        <ion-input formControlName="wasItUsefull" type="text"></ion-input>
+        <ion-input placeholder="Digite aqui..." formControlName="wasItUsefull" type="text"></ion-input>
       </ion-item>
       <span *ngIf="form.get('wasItUsefull')?.touched && form.get('wasItUsefull')?.errors?.['required']"
         class="required-text">Este campo é
@@ -43,7 +43,7 @@
         <ion-icon name="hammer" slot="end"></ion-icon>
       </ion-item>
       <ion-item class="typing-fields">
-        <ion-input formControlName="canWeImprove" type="text"></ion-input>
+        <ion-input placeholder="Digite aqui..." formControlName="canWeImprove" type="text"></ion-input>
       </ion-item>
       <span *ngIf="form.get('canWeImprove')?.dirty && form.get('canWeImprove')?.errors?.['minlength']"
         class="required-text">Este campo deve
@@ -56,7 +56,7 @@
         <ion-icon name="heart" slot="end" class=""></ion-icon>
       </ion-item>
       <ion-item class="typing-fields">
-        <ion-input formControlName="madeYouQuestion" type="text"></ion-input>
+        <ion-input placeholder="Digite aqui..." formControlName="madeYouQuestion" type="text"></ion-input>
       </ion-item>
       <span *ngIf="form.get('madeYouQuestion')?.touched && form.get('madeYouQuestion')?.errors?.['required']"
         class="required-text">Este campo
@@ -72,7 +72,7 @@
         <ion-icon name="heart" slot="end"></ion-icon>
       </ion-item>
       <ion-item class="typing-fields">
-        <ion-input formControlName="isGoingToCare" type="text"></ion-input>
+        <ion-input placeholder="Digite aqui..." formControlName="isGoingToCare" type="text"></ion-input>
       </ion-item>
       <span *ngIf="form.get('isGoingToCare')?.touched && form.get('isGoingToCare')?.errors?.['required']"
         class="required-text">Este campo é
