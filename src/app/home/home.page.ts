@@ -29,10 +29,8 @@ export class HomePage implements OnInit {
   }
 
   async submitForm() {
-    const emailWithNoWhiteSpaces = this.deleteEmailWhiteSpaces();
-
     if (this.form.valid) {
-      await this.firebaseService.uploadFormToFirebase(emailWithNoWhiteSpaces, this.form.value['wasItUsefull'],
+      await this.firebaseService.uploadFormToFirebase(this.form.value['email'], this.form.value['wasItUsefull'],
         this.form.value['canWeImprove'], this.form.value['madeYouQuestion'], this.form.value['isGoingToCare']
       );
       this.alertService.presentAlert("Sucesso", "Obrigado por responder a nossa pesquisa!");
@@ -40,10 +38,5 @@ export class HomePage implements OnInit {
     } else {
       this.alertService.presentAlert("Erro ao enviar", "Cheque os campos e tente novamente!");
     }
-  }
-
-  deleteEmailWhiteSpaces(){
-    var email: string = this.form.value['email'];
-    return email.replace(/\s+/g, '');
   }
 }
